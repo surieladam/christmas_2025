@@ -4,6 +4,11 @@ body {
     margin: 0;
     background-color: #f7f7f9;
     text-align: center;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 header {
