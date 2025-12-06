@@ -335,3 +335,27 @@ function newGame() {
     document.getElementById('guessResult').textContent = '';
     document.getElementById('guessInput').value = '';
 }
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Visszaszámláló indul
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+    // Megjelenítjük a mentett vendégeket
+    displayGuests();
+
+    // Zene vezérlő (4. lépés): play/pause gomb kezelése
+    var bgMusic = document.getElementById('bgMusic');
+    var musicBtn = document.getElementById('musicToggle');
+    if (bgMusic) bgMusic.volume = 0.3;
+    if (musicBtn && bgMusic) {
+        musicBtn.addEventListener('click', function() {
+            if (bgMusic.paused) {
+                bgMusic.play().then(function(){ musicBtn.textContent = 'Zene: Kikapcsolás'; })
+                    .catch(function(){ alert('A böngésző blokkolta az automatikus lejátszást. Kattints újra.'); });
+            } else {
+                bgMusic.pause();
+                musicBtn.textContent = 'Zene: Bekapcsolás';
+            }
+        });
+    }
+});
