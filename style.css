@@ -24,9 +24,21 @@ header h1 {
     text-align: center;
 }
 
+/* tartalom szélesség és kártya-stílus a sections számára */
 main {
+    max-width: 760px;
+    width: 100%;
+    margin: 20px auto;
     padding: 20px;
-    text-align: center;
+    box-sizing: border-box;
+}
+
+section {
+    background: rgba(255,255,255,0.85);
+    border-radius: 12px;
+    padding: 16px;
+    margin: 12px 0;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.06);
 }
 
 h2, h3 {
@@ -47,4 +59,72 @@ footer {
     margin-top: 20px;
     font-size: 14px;
     text-align: center;
+}
+
+.snowflake {
+    position: fixed;
+    top: -10px;
+    color: white;
+    font-size: 20px;
+    animation: fall 5s linear infinite;
+}
+
+@keyframes fall {
+    0% {
+        top: -10px;
+        opacity: 1;
+    }
+    100% {
+        top: 100vh;
+        opacity: 0;
+    }
+}
+
+button {
+    background-color: #b30000;
+    color: white;
+    padding: 10px 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.3s;
+    width: auto;
+}
+
+button:hover {
+    background-color: #006400;
+    transform: scale(1.1);
+}
+
+/* képek és média rugalmas méretezése */
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+/* kisebb kijelzőkre */
+@media (max-width: 600px) {
+    header h1 {
+        font-size: 20px;
+    }
+    header {
+        padding: 14px;
+    }
+    main {
+        padding: 12px;
+        margin: 12px;
+    }
+    section {
+        padding: 12px;
+        margin: 10px 0;
+    }
+    button {
+        width: 100%;
+        padding: 12px;
+    }
+    input[type="text"], textarea {
+        width: 100%;
+    }
 }
