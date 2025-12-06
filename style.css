@@ -34,10 +34,11 @@ h2, h3 {
     text-align: center;
 }
 
-ul {
+ul  {
     list-style-type: square;
     padding-left: 20px;
     text-align: center;
+    list-style-type: none;
 }
 
 footer {
